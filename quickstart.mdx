@@ -1,0 +1,144 @@
+---
+title: Quickstart Guide
+description: Get up and running quickly by setting up your first documentation project and navigating the interface.
+---
+
+## Overview
+
+Follow this guide to set up your account, create your first project, explore the navigation, and add initial content. You will have a fully functional documentation site in minutes using abdelrahman yousef Documentation.
+
+<Columns cols={3}>
+  <Card title="Account Setup" icon="user-plus" href="#account-setup">
+    Sign up and verify your email.
+  </Card>
+  <Card title="First Project" icon="plus" href="#first-project">
+    Launch a new docs space.
+  </Card>
+  <Card title="Navigation" icon="layout" href="#navigation">
+    Find key interface areas.
+  </Card>
+</Columns>
+
+## Set Up Your Account
+
+Begin by creating your account to access all features.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit the sign-up page and enter your email, name, and password.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for the verification link and click it to activate.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to the login page and sign in with your credentials.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable two-factor authentication in your profile settings for added security.
+</Callout>
+
+## Create Your First Project
+
+After logging in, create a documentation project for your content.
+
+<Steps>
+  <Step title="New Project" icon="plus">
+    Click the `New Project` button on the dashboard.
+  </Step>
+  <Step title="Configure" icon="settings">
+    Enter a project name like `My API Docs`, select `Documentation` template, and choose your brand color `#3B82F6`.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Save and publish. Your site deploys automatically.
+  </Step>
+</Steps>
+
+## Basic Navigation
+
+The interface organizes your workflow efficiently.
+
+<Columns cols={2}>
+  <Card title="Dashboard" icon="home">
+    View all projects, recent edits, and analytics.
+  </Card>
+  <Card title="Projects" icon="folder">
+    Manage multiple documentation spaces.
+  </Card>
+  <Card title="Editor" icon="edit-3">
+    Write MDX pages with live preview.
+  </Card>
+  <Card title="Settings" icon="settings">
+    Customize themes, domains, and integrations.
+  </Card>
+</Columns>
+
+## Create Initial Content
+
+Add your first page using MDX. Start with frontmatter and structured content.
+
+<Tabs>
+  <Tab title="index.mdx" icon="file-text">
+    ```mdx
+    ---
+    title: Welcome
+    description: Introduction to your docs.
+    ---
+
+    ## Hello World
+
+    Your documentation starts here.
+    ```
+  </Tab>
+  <Tab title="quickstart.mdx" icon="zap">
+    ```mdx
+    ---
+    title: Quickstart
+    description: Get started fast.
+    ---
+
+    <Callout kind="info">
+      Follow the steps below.
+    </Callout>
+    ```
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+// Example API integration
+const apiKey = process.env.API_KEY;
+fetch('https://api.example.com/docs', {
+  headers: { Authorization: `Bearer ${apiKey}` }
+});
+```
+```python
+# Example API call
+import os
+import requests
+
+api_key = os.getenv('API_KEY')
+response = requests.get('https://api.example.com/docs', 
+                       headers={'Authorization': f'Bearer {api_key}'})
+```
+</CodeGroup>
+
+## Next Steps
+
+<Expandable title="Advanced Configuration" default-open="false">
+  Customize your sidebar navigation by editing `nav.json`:
+
+  ```json
+  {
+    "docs": [
+      { "title": "Introduction", "href": "/docs" },
+      { "title": "API Reference", "href": "/api" }
+    ]
+  }
+  ```
+
+  Deploy changes with one click.
+</Expandable>
+
+You now have a complete documentation project. Explore integrations and themes next.

@@ -1,0 +1,150 @@
+---
+title: Frequently Asked Questions
+description: Common questions and answers about using the Abdelrahman Yousef Documentation platform.
+---
+
+## Overview
+
+You encounter common challenges when managing documentation on the Abdelrahman Yousef Documentation platform. This page addresses troubleshooting, best practices, integration tips, and support resources. Use the expandable sections below to find quick solutions.
+
+<Callout kind="info">
+  Bookmark this page for ongoing reference. Search within your browser for specific keywords.
+</Callout>
+
+## Troubleshooting Common Issues
+
+Follow these steps to resolve frequent problems like slow loading or sync errors.
+
+<Steps>
+  <Step title="Check Network Connection" icon="wifi">
+    Verify your internet speed exceeds `>5Mbps`. Restart your router if needed.
+  </Step>
+  <Step title="Clear Cache" icon="refresh-cw">
+    ```bash
+    # Clear browser cache
+    rm -rf ~/.cache/documentation-platform
+    ```
+    Refresh the page with <kbd>Ctrl</kbd>+<kbd>F5</kbd>.
+  </Step>
+  <Step title="Restart Services" icon="refresh-ccw">
+    Stop and restart the documentation server:
+    ```bash
+    npm run stop
+    npm run start
+    ```
+  </Step>
+  <Step title="Check Logs" icon="file-text">
+    Review console logs for errors like `ECONNREFUSED`.
+  </Step>
+</Steps>
+
+## Best Practices for Organization
+
+Organize your docs effectively across platforms.
+
+<Tabs>
+  <Tab title="GitHub" icon="github">
+    Use folders for hierarchy:
+    ```
+    docs/
+    ├── guides/
+    │   └── quickstart.mdx
+    ├── api/
+    │   └── endpoints.mdx
+    └── faq.mdx
+    ```
+    Commit changes with descriptive messages.
+  </Tab>
+  <Tab title="Local Development" icon="code">
+    Maintain a `sidebar.json` for navigation:
+    ```json
+    {
+      "docs": [
+        { "type": "doc", "id": "faq" },
+        { "type": "category", "label": "Guides", "items": ["quickstart"] }
+      ]
+    }
+    ```
+  </Tab>
+  <Tab title="Team Collaboration" icon="users">
+    Assign roles in your repo settings. Review changes via pull requests before merging.
+  </Tab>
+</Tabs>
+
+<ExpandableGroup>
+  <Expandable title="How do I recover a deleted page?" default-open="true">
+    Navigate to your repo history on GitHub. Use `git revert <commit-hash>` to restore:
+    ```bash
+    git revert abc1234
+    git push origin main
+    ```
+    Pages rebuild automatically within 2 minutes.
+  </Expandable>
+  <Expandable title="Why is my search not working?">
+    Ensure indexing completes after updates. Wait `>5 minutes` or trigger manual rebuild via dashboard.
+  </Expandable>
+  <Expandable title="How to customize the theme?">
+    Edit `tailwind.config.js`:
+    ```javascript
+    module.exports = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#3B82F6'
+          }
+        }
+      }
+    };
+    ```
+    Restart the dev server.
+  </Expandable>
+</ExpandableGroup>
+
+## Integration Tips
+
+Embed your docs or connect via API.
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  // Fetch latest docs
+  const response = await fetch('https://docs.abdelrahmanyousef.com/api/pages', {
+    headers: { 'Authorization': `Bearer ${API_TOKEN}` }
+  });
+  const pages = await response.json();
+  ```
+  ```python
+  # Fetch latest docs
+  import requests
+  response = requests.get(
+      'https://docs.abdelrahmanyousef.com/api/pages',
+      headers={'Authorization': f'Bearer {API_TOKEN}'}
+  )
+  pages = response.json()
+  ```
+</CodeGroup>
+
+## Support Resources
+
+Access help quickly.
+
+<Columns cols={3}>
+  <Card title="Documentation" icon="book-open" href="/docs/introduction">
+    Full guides and examples.
+  </Card>
+  <Card title="GitHub Issues" icon="github" href="https://github.com/abdelrahman-yousef/docs/issues" target="_blank">
+    Report bugs or request features.
+  </Card>
+  <Card title="Community Forum" icon="message-circle" href="https://forum.abdelrahmanyousef.com" target="_blank">
+    Ask questions and share tips.
+  </Card>
+</Columns>
+
+| Issue Type | Recommended Action | Expected Resolution Time |
+|------------|--------------------|--------------------------|
+| Sync Error | Clear cache (see steps above) | `<1 minute` |
+| Theme Issue | Check `tailwind.config.js` | `<5 minutes` |
+| API Failure | Verify `{API_TOKEN}` | Immediate |
+
+<Callout kind="tip">
+  For urgent issues, email support@abdelrahmanyousef.com with logs.
+</Callout>

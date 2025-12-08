@@ -1,0 +1,131 @@
+---
+title: Changelog
+description: Track updates and improvements to the Abdelrahman Yousef Documentation platform over time.
+---
+
+## Overview
+
+You track all changes to the Abdelrahman Yousef Documentation platform in this changelog. Review recent releases to see new features, improvements, bug fixes, and breaking changes. The platform helps you organize project documentation with modern MDX components and seamless navigation.
+
+<Callout kind="info">
+  Subscribe to the RSS feed at `/rss.xml` to receive notifications for new releases.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement", "bugfix"]}>
+
+## New Features
+
+- Added AI-powered search with semantic matching for faster documentation discovery.
+- Introduced customizable themes using your brand color `#3B82F6`.
+- Enabled real-time collaboration for teams editing docs simultaneously.
+
+## Improvements
+
+- Enhanced MDX parsing speed by 40% for larger documentation sites.
+- Improved mobile responsiveness with better touch targets and navigation.
+
+## Bug Fixes
+
+- Fixed mismatched JSX tag parsing errors in component validation.
+- Resolved nested code block rendering issues with 4-backtick fences.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Integrated Mermaid diagram support using secure code block syntax.
+- Added `Update` component for structured changelog entries.
+
+## Bug Fixes
+
+- Corrected special character escaping for `{`, `}`, `<`, `>` in prose.
+- Fixed frontmatter YAML parsing by enforcing no blank lines.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Launched core MDX components: `Callout`, `Card`, `Steps`, `Tabs`, and more.
+- Built-in support for 5-8 diverse components per documentation page.
+
+## Breaking Changes
+
+- Removed legacy H1 headings; always start with H2 for frontmatter titles.
+
+</Update>
+
+## Upcoming Changes
+
+Review planned enhancements for future releases.
+
+<Columns cols={3}>
+  <Card title="v1.3.0: Video Embeds" icon="video" href="/docs/video-component">
+    Native `<Video>` support for YouTube and self-hosted files with controls.
+  </Card>
+  <Card title="v1.3.0: API Reference" icon="code" href="/docs/api-reference">
+    Auto-generated `ParamField` and `ResponseField` from OpenAPI specs.
+  </Card>
+  <Card title="v1.3.0: Analytics" icon="bar-chart-3" href="/docs/analytics">
+    Track page views and component usage with privacy-first metrics.
+  </Card>
+</Columns>
+
+## Stay Updated
+
+Follow these steps to integrate changelog updates into your workflow.
+
+<Steps>
+  <Step title="Subscribe to RSS" icon="rss">
+    Add `/rss.xml` to your feed reader.
+
+    <CodeGroup tabs="JavaScript,Python">
+      ```javascript
+      const parser = new RSSParser();
+      parser.parseURL('https://docs.abdelrahmanyousef.com/rss.xml')
+        .then(({ items }) => console.log(items));
+      ```
+      ```python
+      import feedparser
+      feed = feedparser.parse('https://docs.abdelrahmanyousef.com/rss.xml')
+      print(feed.entries)
+      ```
+    </CodeGroup>
+  </Step>
+  <Step title="Set Up Webhooks" icon="zap">
+    Configure webhooks for instant notifications on new releases.
+  </Step>
+  <Step title="Check GitHub" icon="github">
+    Visit the repository for release notes and source code.
+  </Step>
+</Steps>
+
+## Platform Comparisons
+
+<Tabs>
+  <Tab title="Abdelrahman Yousef Docs" icon="book-open">
+    Full MDX component suite with parsing safeguards.
+  </Tab>
+  <Tab title="Static Alternatives" icon="globe">
+    Simpler but lacks interactive components like `Steps` and `Tabs`.
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced: Parsing Changelog Programmatically" default-open="false">
+
+Use this example to fetch and filter updates by tags.
+
+````javascript
+const updates = await fetchChangelog();
+const features = updates.filter(u => u.tags.includes('feature'));
+console.log(features.map(u => u.description));
+````
+
+</Expandable>
+
+This changelog evolves with your feedback. Contribute via GitHub issues or pull requests to shape future releases.
