@@ -1,20 +1,23 @@
 ---
 title: Configuring Your Space
-description: Customize your documentation space to match your branding and workflow preferences.
+description: >-
+  Customize your documentation space to match your branding and workflow
+  preferences.
 ---
-
 ## Overview
 
 Tailor your abdelrahman yousef Documentation space to reflect your brand and optimize your workflow. Set a custom brand color like `#3B82F6`, adjust layouts, manage navigation, handle exports and imports, and control access. These settings ensure your documentation aligns perfectly with your project needs.
 
-<Columns cols={3}>
-  <Card title="Brand Color" icon="palette" href="#brand-settings">
-    Apply your primary color for a cohesive look.
+<Columns cols="3">
+  <Card title="Brand Color" href="#brand-settings" icon="palette" horizontal="false">
+    Apply your primary color for a cohesive lo
   </Card>
-  <Card title="Layout Options" icon="layout" href="#layout-options">
+
+  <Card title="Layout Options" href="#layout-options" icon="layout" horizontal="false">
     Choose grid or list views for content.
   </Card>
-  <Card title="Access Controls" icon="shield" href="#access-controls">
+
+  <Card title="Access Controls" href="#access-controls" icon="shield" horizontal="false">
     Manage who views and edits your docs.
   </Card>
 </Columns>
@@ -24,24 +27,26 @@ Tailor your abdelrahman yousef Documentation space to reflect your brand and opt
 Update your space's appearance starting with the brand color. Use `#3B82F6` as the default blue accent for buttons, links, and highlights.
 
 <Steps>
-  <Step title="Access Settings" icon="settings">
+  <Step title="Access Settings" icon="settings" title-type="p">
     Navigate to Space Settings > Appearance.
   </Step>
-  <Step title="Enter Brand Color" icon="palette">
+
+  <Step title="Enter Brand Color" icon="palette" title-type="p">
     Input your hex code, such as `#3B82F6`.
   </Step>
-  <Step title="Preview and Save" icon="eye">
+
+  <Step title="Preview and Save" icon="eye" title-type="p">
     Preview changes live, then save to apply across your documentation.
   </Step>
 </Steps>
 
-<Callout kind="tip">
+<Callout kind="tip" collapsed="false">
   Test multiple shades of your brand color to ensure readability on both light and dark themes.
 </Callout>
 
 For programmatic configuration, edit your `config.json` file:
 
-<CodeGroup tabs="JSON,YAML">
+<CodeGroup show-lines="true" tabs={[]}>
   ```json
   {
     "theme": {
@@ -51,6 +56,7 @@ For programmatic configuration, edit your `config.json` file:
     }
   }
   ```
+
   ```yaml
   theme:
     brandColor: "#3B82F6"
@@ -66,32 +72,34 @@ Adapt the layout for better navigation. Choose between sidebar, topbar, or full-
 <Tabs>
   <Tab title="Sidebar Layout" icon="sidebar">
     Ideal for deep documentation hierarchies.
-    
+
     Enable via settings:
-    
+
     ```
     layout: "sidebar"
     navigation: "nested"
     ```
-    
+
     This positions menus on the left for quick access.
   </Tab>
+
   <Tab title="Topbar Layout" icon="menu">
     Suited for shallow content structures.
-    
+
     ```
     layout: "topbar"
     navigation: "flat"
     ```
-    
+
     Keeps options compact at the top.
   </Tab>
+
   <Tab title="Custom Navigation" icon="settings">
     Combine elements for hybrid setups.
-    
+
     <Expandable title="Advanced Config" default-open="false">
       Use arrays for custom menu items:
-      
+
       ```javascript
       navigation: [
         { title: "API", href: "/api" },
@@ -107,13 +115,15 @@ Adapt the layout for better navigation. Choose between sidebar, topbar, or full-
 Export your entire space as Markdown or JSON for backups or migrations. Import from GitHub repos or ZIP files.
 
 <Steps>
-  <Step title="Export Space" icon="download">
+  <Step title="Export Space" icon="download" title-type="p">
     Go to Settings > Export. Select format (MDX or JSON) and download.
   </Step>
-  <Step title="Import Content" icon="upload">
+
+  <Step title="Import Content" icon="upload" title-type="p">
     Use Import > Select file or Git URL. Map paths automatically.
   </Step>
-  <Step title="Verify Import" icon="check-circle">
+
+  <Step title="Verify Import" icon="check-circle" title-type="p">
     Review imported pages in preview mode before publishing.
   </Step>
 </Steps>
@@ -122,13 +132,13 @@ Export your entire space as Markdown or JSON for backups or migrations. Import f
 
 Secure your documentation with role-based permissions. Define viewers, editors, and admins.
 
-| Role     | View | Edit | Admin |
-|----------|------|------|-------|
-| Viewer   | ✅   | ❌   | ❌    |
-| Editor   | ✅   | ✅   | ❌    |
-| Admin    | ✅   | ✅   | ✅    |
+| Role   | View | Edit | Admin |
+| ------ | ---- | ---- | ----- |
+| Viewer | ✅    | ❌    | ❌     |
+| Editor | ✅    | ✅    | ❌     |
+| Admin  | ✅    | ✅    | ✅     |
 
-<Callout kind="alert">
+<Callout kind="alert" collapsed="false">
   Always enable two-factor authentication for admin roles to protect sensitive content.
 </Callout>
 
