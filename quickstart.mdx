@@ -1,20 +1,23 @@
 ---
 title: Quickstart Guide
-description: Get up and running quickly by setting up your first documentation project and navigating the interface.
+description: >-
+  Get up and running quickly by setting up your first documentation project and
+  navigating the interface.
 ---
-
 ## Overview
 
 Follow this guide to set up your account, create your first project, explore the navigation, and add initial content. You will have a fully functional documentation site in minutes using abdelrahman yousef Documentation.
 
-<Columns cols={3}>
-  <Card title="Account Setup" icon="user-plus" href="#account-setup">
+<Columns cols="3">
+  <Card title="Account Setup" href="#account-setup" icon="user-plus" horizontal="false">
     Sign up and verify your email.
   </Card>
-  <Card title="First Project" icon="plus" href="#first-project">
+
+  <Card title="First Project" href="#first-project" icon="plus" horizontal="false">
     Launch a new docs space.
   </Card>
-  <Card title="Navigation" icon="layout" href="#navigation">
+
+  <Card title="Navigation" href="#navigation" icon="layout" horizontal="false">
     Find key interface areas.
   </Card>
 </Columns>
@@ -24,18 +27,20 @@ Follow this guide to set up your account, create your first project, explore the
 Begin by creating your account to access all features.
 
 <Steps>
-  <Step title="Sign Up" icon="user-plus">
+  <Step title="Sign Up" icon="user-plus" title-type="p">
     Visit the sign-up page and enter your email, name, and password.
   </Step>
-  <Step title="Verify Email" icon="mail">
+
+  <Step title="Verify Email" icon="mail" title-type="p">
     Check your inbox for the verification link and click it to activate.
   </Step>
-  <Step title="Log In" icon="log-in">
+
+  <Step title="Log In" icon="log-in" title-type="p">
     Return to the login page and sign in with your credentials.
   </Step>
 </Steps>
 
-<Callout kind="tip">
+<Callout kind="tip" collapsed="false">
   Enable two-factor authentication in your profile settings for added security.
 </Callout>
 
@@ -44,13 +49,15 @@ Begin by creating your account to access all features.
 After logging in, create a documentation project for your content.
 
 <Steps>
-  <Step title="New Project" icon="plus">
+  <Step title="New Project" icon="plus" title-type="p">
     Click the `New Project` button on the dashboard.
   </Step>
-  <Step title="Configure" icon="settings">
+
+  <Step title="Configure" icon="settings" title-type="p">
     Enter a project name like `My API Docs`, select `Documentation` template, and choose your brand color `#3B82F6`.
   </Step>
-  <Step title="Publish" icon="globe">
+
+  <Step title="Publish" icon="globe" title-type="p">
     Save and publish. Your site deploys automatically.
   </Step>
 </Steps>
@@ -59,17 +66,20 @@ After logging in, create a documentation project for your content.
 
 The interface organizes your workflow efficiently.
 
-<Columns cols={2}>
-  <Card title="Dashboard" icon="home">
+<Columns cols="2">
+  <Card title="Dashboard" icon="home" horizontal="false">
     View all projects, recent edits, and analytics.
   </Card>
-  <Card title="Projects" icon="folder">
+
+  <Card title="Projects" icon="folder" horizontal="false">
     Manage multiple documentation spaces.
   </Card>
-  <Card title="Editor" icon="edit-3">
+
+  <Card title="Editor" icon="edit-3" horizontal="false">
     Write MDX pages with live preview.
   </Card>
-  <Card title="Settings" icon="settings">
+
+  <Card title="Settings" icon="settings" horizontal="false">
     Customize themes, domains, and integrations.
   </Card>
 </Columns>
@@ -91,6 +101,7 @@ Add your first page using MDX. Start with frontmatter and structured content.
     Your documentation starts here.
     ```
   </Tab>
+
   <Tab title="quickstart.mdx" icon="zap">
     ```mdx
     ---
@@ -105,23 +116,24 @@ Add your first page using MDX. Start with frontmatter and structured content.
   </Tab>
 </Tabs>
 
-<CodeGroup tabs="JavaScript,Python">
-```javascript
-// Example API integration
-const apiKey = process.env.API_KEY;
-fetch('https://api.example.com/docs', {
-  headers: { Authorization: `Bearer ${apiKey}` }
-});
-```
-```python
-# Example API call
-import os
-import requests
+<CodeGroup show-lines="true" tabs={[]}>
+  ```javascript
+  // Example API integration
+  const apiKey = process.env.API_KEY;
+  fetch('https://api.example.com/docs', {
+    headers: { Authorization: `Bearer ${apiKey}` }
+  });
+  ```
 
-api_key = os.getenv('API_KEY')
-response = requests.get('https://api.example.com/docs', 
-                       headers={'Authorization': f'Bearer {api_key}'})
-```
+  ```python
+  # Example API call
+  import os
+  import requests
+
+  api_key = os.getenv('API_KEY')
+  response = requests.get('https://api.example.com/docs', 
+                         headers={'Authorization': f'Bearer {api_key}'})
+  ```
 </CodeGroup>
 
 ## Next Steps
@@ -142,3 +154,6 @@ response = requests.get('https://api.example.com/docs',
 </Expandable>
 
 You now have a complete documentation project. Explore integrations and themes next.
+
+
+
