@@ -1,8 +1,10 @@
 ---
 title: Welcome to Abdelrahman Yousef Documentation
-description: An overview of the Abdelrahman Yousef Documentation platform, designed as a default space for organizing and managing project documentation with customizable branding.
+description: >-
+  An overview of the Abdelrahman Yousef Documentation platform, designed as a
+  default space for organizing and managing project documentation with
+  customizable branding.
 ---
-
 ## Overview
 
 Welcome to Abdelrahman Yousef Documentation, your default space for organizing and managing all project documentation. This platform provides a flexible environment where you create, edit, and publish docs using MDX. Customize it with your brand color, such as `#3B82F6`, to match your project's identity. Start by exploring the sidebar navigation to find guides, APIs, and changelogs.
@@ -11,14 +13,16 @@ Welcome to Abdelrahman Yousef Documentation, your default space for organizing a
 
 You gain several advantages from this documentation space:
 
-<Columns cols={3}>
-  <Card title="Centralized Organization" icon="layout" href="/docs/organization">
+<Columns cols="3">
+  <Card title="Centralized Organization" href="/docs/organization" icon="layout" horizontal="false">
     Keep all your project docs in one place. Use folders, tags, and search to navigate effortlessly.
   </Card>
-  <Card title="MDX-Powered Content" icon="code" href="/docs/mdx-guide">
+
+  <Card title="MDX-Powered Content" href="/docs/mdx-guide" icon="code" horizontal="false">
     Write rich content with components like `<Callout>` and `<Steps>`. Embed code, diagrams, and interactive elements.
   </Card>
-  <Card title="Custom Branding" icon="palette" href="/docs/customization">
+
+  <Card title="Custom Branding" href="/docs/customization" icon="palette" horizontal="false">
     Apply your brand color `{primary: '#3B82F6'}` across the site for a professional look.
   </Card>
 </Columns>
@@ -28,18 +32,20 @@ You gain several advantages from this documentation space:
 Follow these steps to familiarize yourself with the platform:
 
 <Steps>
-  <Step title="Explore Navigation" icon="menu">
+  <Step title="Explore Navigation" icon="menu" title-type="p">
     Use the left sidebar to access pages. Click "Docs" for core guides and "API" for endpoints.
   </Step>
-  <Step title="Create Your First Page" icon="plus">
+
+  <Step title="Create Your First Page" icon="plus" title-type="p">
     Go to the dashboard and select "New Page". Choose `introduction.mdx` as your template.
 
-    <CodeGroup tabs="CLI,UI">
+    <CodeGroup show-lines="true" tabs={[]}>
       ```bash
       npx create-docspace@latest my-project
       cd my-project
       npm run dev
       ```
+
       ```typescript
       // config/theme.ts
       export const theme = {
@@ -48,12 +54,17 @@ Follow these steps to familiarize yourself with the platform:
       ```
     </CodeGroup>
   </Step>
-  <Step title="Preview Changes" icon="eye">
+
+  <Step title="Preview Changes" icon="eye" title-type="p">
     Edit files in your editor and watch live previews. Deploy with `npm run build`.
+  </Step>
+
+  <Step title="New Step" title-type="p">
+    Description for this step...
   </Step>
 </Steps>
 
-<Callout kind="tip">
+<Callout kind="tip" collapsed="false">
   Enable dark mode in your settings for better coding sessions. Toggle it via the user menu.
 </Callout>
 
@@ -77,6 +88,7 @@ Tailor the platform to your needs using these methods:
 
     Restart your dev server to apply changes.
   </Tab>
+
   <Tab title="Navigation" icon="menu">
     Edit `nav.config.ts` to reorder sidebar items.
 
@@ -89,6 +101,7 @@ Tailor the platform to your needs using these methods:
     ];
     ```
   </Tab>
+
   <Tab title="Components" icon="components">
     Extend with custom MDX components in `components/`.
 
@@ -106,11 +119,12 @@ Tailor the platform to your needs using these methods:
 
 ## Next Steps
 
-<Columns cols={2}>
-  <Card title="Quickstart Guide" icon="rocket" href="/docs/quickstart">
+<Columns cols="2">
+  <Card title="Quickstart Guide" href="/docs/quickstart" icon="rocket" horizontal="false">
     Set up your first project in under 5 minutes.
   </Card>
-  <Card title="API Reference" icon="api" href="/docs/api">
+
+  <Card title="API Reference" href="/docs/api" icon="api" horizontal="false">
     Integrate with endpoints using realistic examples.
   </Card>
 </Columns>
@@ -119,8 +133,7 @@ Tailor the platform to your needs using these methods:
 graph TD
     A[Start Project] --> B[Configure Theme]
     B --> C[Add Pages]
-    C --> D[Deploy Site]
+    C --> D[Deploy Site]This setup ensures you maintain organized, branded documentation that scales with your project.
     D --> E[Share Docs]
 ```
 
-This setup ensures you maintain organized, branded documentation that scales with your project.
