@@ -1,20 +1,23 @@
 ---
 title: Managing Your Documentation
-description: Learn how to organize, edit, and structure your project documentation effectively within the platform.
+description: >-
+  Learn how to organize, edit, and structure your project documentation
+  effectively within the platform.
 ---
-
 ## Overview
 
 You manage your abdelrahman yousef Documentation space by creating pages, organizing hierarchies, integrating version control, and enabling collaboration. This guide walks you through each process with practical steps and examples. Start by familiarizing yourself with the editor interface, then build a structured documentation site.
 
-<Columns cols={3}>
-  <Card title="Create Pages" icon="file-plus" href="#creating-pages">
+<Columns cols="3">
+  <Card title="Create Pages" href="#creating-pages" icon="file-plus" horizontal="false">
     Build new documentation pages quickly.
   </Card>
-  <Card title="Organize Hierarchy" icon="folder" href="#hierarchy">
+
+  <Card title="Organize Hierarchy" href="#hierarchy" icon="folder" horizontal="false">
     Structure your content for easy navigation.
   </Card>
-  <Card title="Collaborate" icon="users" href="#collaboration">
+
+  <Card title="Collaborate" href="#collaboration" icon="users" horizontal="false">
     Work with your team seamlessly.
   </Card>
 </Columns>
@@ -24,10 +27,11 @@ You manage your abdelrahman yousef Documentation space by creating pages, organi
 Use the built-in editor to create and modify pages. Follow these steps to get started.
 
 <Steps>
-  <Step title="Create a New Page" icon="plus">
+  <Step title="Create a New Page" icon="plus" title-type="p">
     Navigate to your documentation root. Click the `New Page` button and enter a filename like `quickstart.mdx`. The editor opens automatically.
   </Step>
-  <Step title="Edit Content" icon="edit-3">
+
+  <Step title="Edit Content" icon="edit-3" title-type="p">
     Write in Markdown or MDX. Add frontmatter at the top:
 
     ```yaml
@@ -39,12 +43,13 @@ Use the built-in editor to create and modify pages. Follow these steps to get st
 
     Use headings starting with `##` for sections.
   </Step>
-  <Step title="Preview and Publish" icon="eye">
+
+  <Step title="Preview and Publish" icon="eye" title-type="p">
     Click `Preview` to see live changes. Save with `Ctrl+S` (<kbd>Ctrl</kbd>+<kbd>S</kbd>) to publish instantly.
   </Step>
 </Steps>
 
-<Callout kind="tip">
+<Callout kind="tip" collapsed="false">
   Always include YAML frontmatter in every `.mdx` file for proper metadata rendering.
 </Callout>
 
@@ -52,11 +57,11 @@ Use the built-in editor to create and modify pages. Follow these steps to get st
 
 Structure your docs with folders and frontmatter to create a navigable sidebar. Use `_sidebar.mdx` or directory nesting.
 
-| Level | Method | Example Path |
-|-------|--------|--------------|
-| Root | Index page | `index.mdx` |
-| Section | Folder | `guides/quickstart.mdx` |
-| Subsection | Nested folder | `api/v1/endpoints.mdx` |
+| Level      | Method        | Example Path            |
+| ---------- | ------------- | ----------------------- |
+| Root       | Index page    | `index.mdx`             |
+| Section    | Folder        | `guides/quickstart.mdx` |
+| Subsection | Nested folder | `api/v1/endpoints.mdx`  |
 
 For complex hierarchies, define links in `_sidebar.mdx`:
 
@@ -80,7 +85,7 @@ For complex hierarchies, define links in `_sidebar.mdx`:
 
 Integrate Git for tracking changes. Connect your repo via platform settings.
 
-<CodeGroup tabs="Git Bash,CLI">
+<CodeGroup show-lines="true" tabs={[]}>
   ```bash
   git init
   git add .
@@ -88,6 +93,7 @@ Integrate Git for tracking changes. Connect your repo via platform settings.
   git remote add origin https://github.com/abdelrahman-yousef/docs.git
   git push -u origin main
   ```
+
   ```bash
   # Clone existing repo
   git clone https://github.com/abdelrahman-yousef/docs.git
@@ -96,7 +102,7 @@ Integrate Git for tracking changes. Connect your repo via platform settings.
   ```
 </CodeGroup>
 
-<Callout kind="info">
+<Callout kind="info" collapsed="false">
   Enable GitHub integration in settings to auto-sync commits with your live docs.
 </Callout>
 
@@ -110,9 +116,11 @@ Invite team members and manage permissions.
 
     Changes appear in real-time for all editors.
   </Tab>
+
   <Tab title="Review Changes" icon="git-pull-request">
     Use the `History` tab on any page to compare versions. Approve or revert via Git pull requests linked to your repo.
   </Tab>
+
   <Tab title="Comments" icon="message-circle">
     Highlight text and add inline comments. @mention users for notifications: `@team review this section`.
   </Tab>
